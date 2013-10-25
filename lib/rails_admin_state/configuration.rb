@@ -39,11 +39,7 @@ module RailsAdminState
 
     protected
     def config
-      if ::RailsAdmin::Config.model(@abstract_model.model).respond_to? :state
-        ::RailsAdmin::Config.model(@abstract_model.model).state
-      else
-        {}
-      end
+      ::RailsAdmin::Config.model(@abstract_model.model).state
     end
   end
 end
