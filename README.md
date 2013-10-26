@@ -4,9 +4,11 @@
 Allows easily sending state_machine events to a model from Rails Admin, including support for
 ActiveRecord \ Mongoid and custom state field name and multiple state machines per model.
 
-## Screenshot
 
- ![Rails Admin State Machine](https://rscx.ru/state.png)
+## Differences between this and the main branch.
+1. On the list view, the current state with coloration will be displayed. No events will be displayed here.
+2. On the Edit view, there will be the event buttons as well as the current state. The enum view has been removed.
+3. After clicking a state machine action, the user is redirected back to the show view. This allows for state-dependent editing.
 
 
 ## Installing
@@ -50,6 +52,8 @@ Mark the field you need display as state:
 
 ### States and event button/label custom classes:
 
+**NOTE: this is now required **
+
     rails_admin do
       list do
         field :state, :state
@@ -61,7 +65,7 @@ Mark the field you need display as state:
         states: {on_moderation: 'btn-warning'}
       })
     end
-  
+
 ### i18n (state and event names):
 
 Just as usual for state_machine, see:
