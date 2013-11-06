@@ -32,7 +32,7 @@ module RailsAdmin
                   events[event].human_name,
                   state_path(model_name: @abstract_model, id: bindings[:object].id, event: event, attr: name),
                   method: :post,
-                  class: "btn btn-mini #{event_class}",
+                  class: "btn #{event_class}",
                   style: 'margin-bottom: 5px;'
                 )
               end
