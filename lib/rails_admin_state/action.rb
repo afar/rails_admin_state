@@ -25,7 +25,6 @@ module RailsAdmin
               begin
                 obj = @abstract_model.model.find(params['id'])
                 if obj.send("fire_#{params[:attr]}_event".to_sym, params[:event].to_sym)
-                  obj.save!
                   flash[:success] = I18n.t('admin.state_machine.event_fired', attr: params[:method], event: params[:event])
                   redirect_path = show_path(model_name: @abstract_model, id: obj.id)
                 else
